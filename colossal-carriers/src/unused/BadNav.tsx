@@ -3,9 +3,14 @@ import React, { useState } from "react";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
 
   function handleToggleMenu() {
     setIsMenuOpen(!isMenuOpen);
+  }
+
+  function toggleServicesDropdown() {
+    setIsServicesDropdownOpen(!isServicesDropdownOpen);
   }
 
   return (
@@ -52,17 +57,79 @@ export default function Navbar() {
         <div
           className={`${
             isMenuOpen ? "block" : "hidden"
-          } md:flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0 font-medium border md:border-0 border-gray-100 rounded-lg bg-white md:bg-white md:p-0 p-4`}
+          } md:flex justify-center w-full`}
         >
-          <ul className="flex flex-col md:flex-row md:space-x-8">
-            <li>
-              <a
-                href="/services"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+          <ul className="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0 font-medium border md:border-0 border-gray-100 rounded-lg bg-gray-50 md:bg-white md:p-0 p-4">
+            {/* Services Dropdown */}
+            <li className="relative group">
+              {/* Button for mobile */}
+              <button
+                type="button"
+                onClick={toggleServicesDropdown}
+                className="block md:hidden py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
               >
-                Service
-              </a>
+                Services +
+              </button>
+
+              {/* Hover for desktop */}
+              <span className="hidden md:block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 cursor-pointer">
+                Services
+              </span>
+
+              {/* Desktop Dropdown */}
+              <div className="hidden group-hover:block absolute bg-white border border-gray-200 rounded-md shadow-lg w-64">
+                <ul className="py-2">
+                  <li>
+                    <a
+                      href="/services/option1"
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100 whitespace-nowrap"
+                    >
+                      Reefer / Heated Transport
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/services/option2"
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100 whitespace-nowrap"
+                    >
+                      Dry Van Transport
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/services/option3"
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100 whitespace-nowrap"
+                    >
+                      Flatbed Transport
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Mobile Dropdown */}
+              {isMenuOpen && isServicesDropdownOpen && (
+                <ul className="md:hidden pl-4">
+                  <li>
+                    <a
+                      href="/services/option1"
+                      className="block py-2 text-gray-700 hover:bg-gray-100"
+                    >
+                      Reefer / Heated Transport
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/services/option2"
+                      className="block py-2 text-gray-700 hover:bg-gray-100"
+                    >
+                      Dry Van Transport
+                    </a>
+                  </li>
+                </ul>
+              )}
             </li>
+
+            {/* Other Links */}
             <li>
               <a
                 href="/about"
