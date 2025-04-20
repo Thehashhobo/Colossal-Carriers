@@ -38,7 +38,7 @@ const WhyUse: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-gray-200 py-12 px-6">
+    <section className="w-full bg-gray-200 py-12 ">
       <h2 className="text-3xl font-bold text-center text-black mb-8">
         Why Ship With Us
       </h2>

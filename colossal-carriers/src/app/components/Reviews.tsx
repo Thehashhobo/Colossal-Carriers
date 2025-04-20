@@ -35,7 +35,7 @@ export default function Reviews() {
   };
 
   return (
-    <section className="w-full bg-gray-100 py-12 px-6">
+    <section className="w-full bg-transparent py-12 px-6">
       <h2 className="text-3xl font-bold text-center text-black mb-4">
         Client Reviews
       </h2>
@@ -44,10 +44,10 @@ export default function Reviews() {
         successful project completions.
       </p>
 
-      <div className="relative w-full max-w-2xl mx-auto overflow-hidden">
+      <div className="relative w-full max-w-4xl mx-auto overflow-hidden">
         {/* Reviews Container */}
         <div
-          className="flex transition-transform duration-700 ease-in-out"
+          className="flex transition-transform duration-700 ease-in-out "
           style={{
             transform: `translateX(-${currentIndex * 100}%)`,
           }}
@@ -55,7 +55,7 @@ export default function Reviews() {
           {reviews.map((review, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-full flex flex-col items-center justify-center bg-white shadow-lg rounded-lg p-6"
+              className="flex-shrink-0 w-full flex flex-col items-center justify-center bg-white rounded-lg p-6"
             >
               <p className="text-gray-700 mb-4 text-center">{review.message}</p>
               <p className="text-black font-bold text-right">- {review.reviewer}</p>
@@ -66,7 +66,7 @@ export default function Reviews() {
         {/* Navigation Buttons (Desktop Only) */}
         <button
           onClick={handlePrev}
-          className="hidden md:flex absolute top-1/2 left-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-200"
+          className="hidden md:flex absolute top-1/2 left-4 transform -translate-y-1/2 -translate-x-3 bg-white p-0.5 rounded-full  hover:bg-gray-200"
         >
           <svg
             className="w-6 h-6 text-gray-700"
@@ -85,7 +85,7 @@ export default function Reviews() {
         </button>
         <button
           onClick={handleNext}
-          className="hidden md:flex absolute top-1/2 right-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-200"
+          className="hidden md:flex absolute top-1/2 right-4 transform -translate-y-1/2 translate-x-3 bg-white p-0.5 rounded-full hover:bg-gray-200"
         >
           <svg
             className="w-6 h-6 text-gray-700"

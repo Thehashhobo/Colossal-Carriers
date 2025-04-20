@@ -58,7 +58,7 @@ export default function Navbar() {
             <li>
               <a
                 href="/services"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0"
               >
                 Service
               </a>
@@ -66,7 +66,7 @@ export default function Navbar() {
             <li>
               <a
                 href="/about"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0"
               >
                 About
               </a>
@@ -74,7 +74,7 @@ export default function Navbar() {
             <li>
               <a
                 href="/careers"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0"
               >
                 Careers
               </a>
@@ -82,7 +82,7 @@ export default function Navbar() {
             <li>
               <a
                 href="/contacts"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0"
               >
                 Contact
               </a>
@@ -95,7 +95,7 @@ export default function Navbar() {
           {/* Mobile-only call button */}
           <a
             href="tel:+1234567890"
-            className="md:hidden block text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2 text-center"
+            className="md:hidden block text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-4 py-2 text-center"
           >
             Call Us
           </a>
@@ -103,7 +103,7 @@ export default function Navbar() {
           {/* Visible on all sizes */}
           <button
             type="button"
-            className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2 text-center"
+            className="text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-4 py-2 text-center"
           >
             GET A QUOTE
           </button>

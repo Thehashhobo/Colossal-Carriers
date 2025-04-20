@@ -7,10 +7,13 @@ export default function About() {
 
     return (
         <main className="flex flex-col min-h-screen justify-start items-start pt-16">
-          <section
-            className="relative w-full h-[55vh] md:h-[75vh] bg-cover bg-center justify-start"
-            style={{ backgroundImage: `url(${A1.src})` }}
-          >
+            <section
+              className="relative w-full h-[55vh] md:h-[75vh] bg-cover justify-start"
+              style={{
+                backgroundImage: `url(${A1.src})`,
+                backgroundPosition: "center 20%", // Adjust the vertical position
+              }}
+            >
             <div className="relative z-3 flex flex-col items-center justify-center h-full text-white bg-black/40">
                 <h1 className="text-4xl text-center font-bold md:text-5xl ml-0.5 mr-0.5 relative -translate-y-3">About Colossal Carriers</h1>
                 <p className="text-xl text-center mt-2 ml-0.5 mr-0.5 relative -translate-y-3">
@@ -47,7 +50,7 @@ export default function About() {
                 product to its final destination safely and on time.
                 </p>
                 <div className="flex space-x-4">
-                <button className="bg-orange-500 text-white font-bold py-2 px-4 rounded hover:bg-orange-600">
+                <button className="bg-orange-500 text-white font-bold py-2 rounded hover:bg-orange-600">
                     Request A Quote
                 </button>
                 </div>
@@ -71,9 +74,10 @@ export default function About() {
     
           
           {/* Info Section */}
-          <section className="w-full bg-white py-12 px-6">
+          <section className="w-full bg-white py-12">
           <hr className="w-full h-[1.5px] bg-[#59890c]"/> 
           <WhyUse/>
+          <hr className="w-full h-[1.5px] bg-[#59890c]"/> 
           <Reviews/>
           </section>
     

@@ -1,6 +1,9 @@
 import H1 from "../../public/images/H1.jpeg";
+import H2 from "../../public/images/H2.jpg";
+import H3 from "../../public/images/H3.jpg";
 import ServiceCard from "./components/ServiceCard";
 import WhyUse from "./components/WhyUse";
+import Reviews from "./components/Reviews";
 
 export default function Home() {
   return (
@@ -38,20 +41,27 @@ export default function Home() {
 
       {/* Transportation Services Section */}
       <section className="w-full bg-gray-200 py-12 px-6">
-        <h2 className="text-3xl font-bold text-center text-black mb-8">
+        <div className="text-center">
+            <p className="mb-1.5 text-2xl font-extrabold opacity-45">Colossal Carriers</p>
+            <p className="mb-4.5 mx-25 text-3xl font-bold ">Canadian-based company with a fleet of trucks available to transport your goods within Canada and the USA.
+            </p>
+        </div>
+        {/* <h2 className="text-3xl font-bold text-center text-black mb-8">
           Transportation Services
-        </h2>
+        </h2> */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-screen-lg mx-auto">
           <ServiceCard
-            image="https://via.placeholder.com/400x200"
-            title="Non-Stop Service"
-            text="We provide uninterrupted transportation services to ensure your goods reach their destination on time."
+            image={H2.src}
+            title="Transportation Service"
+            text="We provide reliable transportation services for both dry and temperature-controlled goods, 
+            with an excellent track record of safe and on-time delivery."
             link="/services/reefers"
           />
           <ServiceCard
-            image="https://via.placeholder.com/400x200"
-            title="Fast & Reliable Delivery"
-            text="Our team is dedicated to delivering your shipments quickly and reliably, every time."
+            image={H3.src}
+            title="Hit the Road with Colossal Carriers"
+            text="we’re looking for dependable, professional drivers to join our team. Whether you're seeking steady company work or
+            the freedom of lease-to-own, we have a place for you."
             link="/services/dry-vans"
           />
           {/* <ServiceCard
@@ -70,11 +80,16 @@ export default function Home() {
       <line className="w-full h-[1.5px] bg-[#59890c]"/> 
       <WhyUse/>
       <section className="flex items-center justify-center align-middle w-full h-[30vh] bg-gray-200 ">
-        <button className="bg-[#59890c] text-white font-bold py-2 px-4 rounded">
+        <a
+          href="/about"
+          className="bg-[#59890c] text-white font-bold py-2 px-4 rounded text-center hover:bg-green-800 transition"
+        >
           More About Us
-        </button>
+        </a>
+        
       </section>
-
+      <line className="w-full h-[1.5px] bg-[#59890c]"/> 
+      <Reviews/>
 
     </main>
   );
