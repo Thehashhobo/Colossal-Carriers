@@ -38,7 +38,7 @@ const WhyUse: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-gray-200 py-12 ">
+    <section className="w-full bg-gray-200 py-12 px-6">
       <h2 className="text-3xl font-bold text-center text-black mb-8">
         Why Ship With Us
       </h2>
@@ -51,7 +51,7 @@ const WhyUse: React.FC = () => {
               className="w-20 h-20 mb-4"
             />
             <h3 className="text-xl font-bold text-black mb-2">{item.title}</h3>
-            <p className="text-gray-700">{item.text}</p>
+            <p className="text-gray-700 mx-5">{item.text}</p>
           </div>
         ))}
       </div>

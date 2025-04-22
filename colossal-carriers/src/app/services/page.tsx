@@ -5,17 +5,17 @@ export default function Services() {
 return (
 <main className="flex flex-col min-h-screen justify-start items-start pt-16">
       <section
-        className="relative w-full h-[55vh] md:h-[75vh] bg-cover bg-center justify-start"
+        className="relative w-full h-[60vh] md:h-[75vh] bg-cover bg-center justify-start"
         style={{ backgroundImage: `url(${S1.src})` }}
       >
-        <div className="relative z-3 flex flex-col items-center justify-center h-full text-white bg-black/52">
+        <div className="relative z-3 flex flex-col pt-18 md:pt-1 items-center justify-center h-full text-white bg-black/52">
             <h1 className="text-4xl text-center font-bold md:text-5xl ml-0.5 mr-0.5 relative -translate-y-3">You Name it, We Ship it</h1>
             <p className="text-2xl text-center mt-2 ml-0.5 mr-0.5 relative -translate-y-3">
             Delivering excellence, one shipment at a time.
             </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-screen-md mt-2">
           <a
-            href="/services"
+            href="/quote"
             className="bg-green-700 text-white font-bold py-3 px-6 rounded text-center hover:bg-green-800 transition"
           >
             Get a Quote
@@ -119,7 +119,7 @@ return (
             </div>
         </section>
         <hr className="w-full h-[1.5px] bg-[#59890c]"/> 
-      <section className="flex items-center justify-center align-middle w-full h-[30vh] bg-gray-200 ">
+      <section className="flex items-center justify-center align-middle w-full h-[15vh] md:h-[20vh] bg-gray-200 ">
         <button className="bg-[#59890c] text-white font-bold py-2 px-4 rounded">
           More About Us
         </button>

@@ -1,7 +1,7 @@
 import A2 from "../../../public/images/A2.png";
 export default function Careers() {
   return (
-    <section className="w-full bg-white py-20 px-6">
+    <section className="w-full bg-white py-32 md:py-20 px-6">
       <div className="flex flex-col md:flex-row items-center max-w-screen-lg mx-auto gap-8">
         {/* Text Content */}
         <div className="flex-1 md:pr-8 p-4 border-2 border-green-800">

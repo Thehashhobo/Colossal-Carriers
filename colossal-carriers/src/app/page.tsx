@@ -9,11 +9,11 @@ export default function Home() {
   return (
     <main className="flex flex-col min-h-screen justify-start items-start pt-16">
       <section
-        className="relative w-full h-[55vh] md:h-[85vh] bg-cover bg-center justify-start"
+        className="relative w-full h-[60vh] md:h-[85vh] bg-cover bg-center justify-start"
         style={{ backgroundImage: `url(${H1.src})` }}
       >
-        <div className="relative z-3 flex flex-col items-center justify-center h-full text-white bg-black/52">
-            <h1 className="text-4xl text-center font-bold md:text-5xl ml-0.5 mr-0.5 relative -translate-y-3">You Name it, We Ship it</h1>
+        <div className="relative z-3 flex flex-col pt-18 md:pt-1 items-center justify-center h-full text-white bg-black/52">
+            <h1 className="text-4xl text-center  font-bold md:text-5xl ml-0.5 mr-0.5 relative -translate-y-3">You Name it, We Ship it</h1>
             <p className="text-2xl text-center mt-2 ml-0.5 mr-0.5 relative -translate-y-3">
             Delivering excellence, one shipment at a time.
             </p>
@@ -42,8 +42,8 @@ export default function Home() {
       {/* Transportation Services Section */}
       <section className="w-full bg-gray-200 py-12 px-6">
         <div className="text-center">
-            <p className="mb-1.5 text-2xl font-extrabold opacity-45">Colossal Carriers</p>
-            <p className="mb-4.5 mx-25 text-3xl font-bold ">Canadian-based company with a fleet of trucks available to transport your goods within Canada and the USA.
+            <p className="mb-1.5 text-3xl text-green-800 font-extrabold opacity-45">Colossal Carriers</p>
+            <p className="mb-4.5 mx-5 text-xl md:mx-25 md:text-3xl font-bold ">Canadian-based company with a fleet of trucks available to transport your goods within Canada and the USA.
             </p>
         </div>
         {/* <h2 className="text-3xl font-bold text-center text-black mb-8">
@@ -79,10 +79,10 @@ export default function Home() {
       {/* Info Section */}
       <line className="w-full h-[1.5px] bg-[#59890c]"/> 
       <WhyUse/>
-      <section className="flex items-center justify-center align-middle w-full h-[30vh] bg-gray-200 ">
+      <section className="flex items-center justify-center align-middle w-full h-[10vh] md:h-[15vh] bg-gray-200 ">
         <a
           href="/about"
-          className="bg-[#59890c] text-white font-bold py-2 px-4 rounded text-center hover:bg-green-800 transition"
+          className="bg-[#59890c] text-white font-bold py-2 px-4 rounded text-center hover:bg-green-800 transition mb-15"
         >
           More About Us
         </a>

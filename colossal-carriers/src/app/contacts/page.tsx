@@ -1,7 +1,7 @@
 import C1 from "../../../public/C1.svg"
 export default function Contacts() {
     return (
-    <main className="flex flex-col min-h-screen justify-start items-center pt-16">
+    <main className="flex flex-col min-h-screen justify-start items-center pt-28 md:pt-16">
         <section
         className="flex items-center justify-center w-full h-[12vh] px-10"
         style={{
@@ -61,7 +61,7 @@ export default function Contacts() {
             <form className="space-y-4">
                 <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                    Enter your name <span className="text-red-500">*</span>
+                    Name <span className="text-red-500">*</span>
                 </label>
                 <input
                     type="text"
@@ -72,7 +72,7 @@ export default function Contacts() {
                 </div>
                 <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                    Email address <span className="text-red-500">*</span>
+                    Email <span className="text-red-500">*</span>
                 </label>
                 <input
                     type="email"
@@ -93,7 +93,7 @@ export default function Contacts() {
                 </div>
                 <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                    Your message
+                    Your Message
                 </label>
                 <textarea
                     id="message"

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -101,12 +102,14 @@ export default function Navbar() {
           </a>
 
           {/* Visible on all sizes */}
-          <button
-            type="button"
-            className="text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-4 py-2 text-center"
-          >
-            GET A QUOTE
-          </button>
+          <Link href="/quote">
+            <button
+              type="button"
+              className="text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-4 py-2 text-center"
+            >
+              GET A QUOTE
+            </button>
+          </Link>
         </div>
       </div>
     </nav>
