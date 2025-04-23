@@ -1,6 +1,6 @@
 
-import S1 from "../../../public/images/S1.png";
-import S2 from "../../../public/images/S2.png";
+import S1 from "../../../public/images/S1.webp";
+import S2 from "../../../public/images/S2.webp";
 export default function Services() {
 return (
 <main className="flex flex-col min-h-screen justify-start items-start pt-16">
@@ -58,9 +58,10 @@ return (
                 product to its final destination safely and on time.
                 </p>
                 <div className="flex space-x-4">
-                <button className="bg-green-700 text-white font-bold py-2 px-4 rounded hover:bg-green-800">
+                <a className="bg-green-700 text-white font-bold py-2 px-4 rounded hover:bg-green-800" 
+                href = "/quote">
                     Request A Quote
-                </button>
+                </a>
                 </div>
             </div>
 
@@ -111,18 +112,21 @@ return (
                 product to its final destination safely and on time.
                 </p>
                 <div className="flex space-x-4">
-                <button className="bg-green-700 text-white font-bold py-2 px-4 rounded hover:bg-green-800">
+                <a className="bg-green-700 text-white font-bold py-2 px-4 rounded hover:bg-green-800" 
+                href = "/quote">
                     Request A Quote
-                </button>
+                </a>
                 </div>
             </div>
             </div>
         </section>
         <hr className="w-full h-[1.5px] bg-[#59890c]"/> 
       <section className="flex items-center justify-center align-middle w-full h-[15vh] md:h-[20vh] bg-gray-200 ">
-        <button className="bg-[#59890c] text-white font-bold py-2 px-4 rounded">
+        <a className="bg-green-700 text-white font-bold py-2 px-4 rounded hover:bg-green-800"
+          href="/about">
+
           More About Us
-        </button>
+        </a>
       </section>
 
 

@@ -1,9 +1,10 @@
-import H1 from "../../public/images/H1.jpeg";
-import H2 from "../../public/images/H2.jpg";
-import H3 from "../../public/images/H3.jpg";
+import H1 from "../../public/images/H1.webp";
+import H2 from "../../public/images/H2.webp";
+import H3 from "../../public/images/H3.webp";
 import ServiceCard from "./components/ServiceCard";
 import WhyUse from "./components/WhyUse";
 import Reviews from "./components/Reviews";
+
 
 export default function Home() {
   return (
@@ -82,7 +83,7 @@ export default function Home() {
       <section className="flex items-center justify-center align-middle w-full h-[10vh] md:h-[15vh] bg-gray-200 ">
         <a
           href="/about"
-          className="bg-[#59890c] text-white font-bold py-2 px-4 rounded text-center hover:bg-green-800 transition mb-15"
+          className="bg-green-700 text-white font-bold py-2 px-4 rounded text-center hover:bg-green-800 transition mb-15"
         >
           More About Us
         </a>
@@ -90,7 +91,6 @@ export default function Home() {
       </section>
       <line className="w-full h-[1.5px] bg-[#59890c]"/> 
       <Reviews/>
-
     </main>
   );
 }

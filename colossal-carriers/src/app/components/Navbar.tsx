@@ -3,10 +3,15 @@ import React, { useState } from "react";
 import Link from "next/link";
 
 export default function Navbar() {
+  const [activeLink, setActiveLink] = useState("/"); // State to track the active link
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function handleToggleMenu() {
     setIsMenuOpen(!isMenuOpen);
+  }
+
+  function handleSetActive(link: string) {
+    setActiveLink(link); // Update the active link state
   }
 
   return (
@@ -53,40 +58,52 @@ export default function Navbar() {
         <div
           className={`${
             isMenuOpen ? "block" : "hidden"
-          } md:flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0 font-medium border md:border-0 border-gray-100 rounded-lg bg-white md:bg-white md:p-0 p-4`}
+          } md:flex flex-col md:flex-row justify-center md:space-x-8 mt-4 md:mt-0 font-medium md:border-0 border-gray-100 rounded-lg bg-white md:bg-white md:p-0 p-4`}
         >
           <ul className="flex flex-col md:flex-row md:space-x-8">
             <li>
-              <a
+              <Link
                 href="/services"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0"
+                onClick={() => handleSetActive("/services")} // Set active link
+                className={`block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 ${
+                  activeLink === "/services" ? "underline underline-offset-16 text-green-600" : ""
+                }`}
               >
                 Service
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/about"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0"
+                onClick={() => handleSetActive("/about")} // Set active link
+                className={`block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 ${
+                  activeLink === "/about" ? "underline underline-offset-16 text-green-600" : ""
+                }`}
               >
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/careers"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0"
+                onClick={() => handleSetActive("/careers")} // Set active link
+                className={`block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 ${
+                  activeLink === "/careers" ? "underline underline-offset-16 text-green-600" : ""
+                }`}
               >
                 Careers
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/contacts"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0"
+                onClick={() => handleSetActive("/contacts")} // Set active link
+                className={`block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 ${
+                  activeLink === "/contacts" ? "underline underline-offset-16 text-green-600" : ""
+                }`}
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

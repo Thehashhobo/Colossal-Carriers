@@ -1,5 +1,5 @@
-import A1 from "../../../public/images/A1.png";
-import A2 from "../../../public/images/A2.png";
+import A1 from "../../../public/images/A1.webp";
+import A2 from "../../../public/images/A2.webp";
 import WhyUse from "../components/WhyUse";
 import Reviews from "../components/Reviews";
 
@@ -27,7 +27,7 @@ export default function About() {
         <section className="w-full bg-white py-12 px-6">
             <div className="flex flex-col md:flex-row items-center max-w-screen-lg mx-auto gap-2">
             {/* Text Content */}
-            <div className="flex-1 md:pr-8 p-4 border-1 hover:scale-105 shadow-lg transition-transform duration-300 ease-in-out">
+            <div className="flex-1 md:pr-3 md:pl-3 p-4 border-1 hover:scale-105 shadow-lg transition-transform duration-300 ease-in-out">
                 <h2 className="text-3xl font-bold text-black mb-4">
                 There’s Always a Solution
                 </h2>
@@ -49,10 +49,16 @@ export default function About() {
                 trucks and more than 200 trailers – fully equipped to move your
                 product to its final destination safely and on time.
                 </p>
-                <div className="flex space-x-4">
-                <button className="bg-orange-500 text-white font-bold py-2 rounded hover:bg-orange-600">
+                <div className="flex place-content-between space-x-4">
+                <a className="bg-green-700 text-white font-bold py-2 px-4 rounded hover:bg-green-800" 
+                href = "/quote">
                     Request A Quote
-                </button>
+                </a>
+
+                <a className="bg-green-700 text-white font-bold py-2 px-4 rounded hover:bg-green-800" 
+                href = "/careers">
+                    Fuel Your Career with Us
+                </a>
                 </div>
             </div>
 
