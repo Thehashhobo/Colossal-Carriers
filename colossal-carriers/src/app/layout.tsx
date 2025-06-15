@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { FacebookFilled, TwitterCircleFilled, InstagramFilled, YoutubeFilled } from '@ant-design/icons';
 import "./globals.css";
 import Link from "next/link";
@@ -14,6 +15,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -53,9 +60,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <meta name="apple-mobile-web-app-title" content="Colossal Carriers" />
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}>
         <Navbar />
+        <div className="pt-19 md:pt-22">
         {children}
         <div className="flex flex-col md:flex-row justify-between items-start p-8 bg-[#088044] text-white">
           {/* Footer Links */}
@@ -156,7 +165,9 @@ export default function RootLayout({
           </div>
         </div>
         <Footer />
+        </div>
       </body>
+      <GoogleAnalytics gaId="G-VRVGHWCQZG" />
     
     </html>
   );

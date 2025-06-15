@@ -7,8 +7,8 @@ const WhyUse: React.FC = () => {
   const items = [
     {
       image: T1,
-      title: "Non-Stop Service",
-      text: "We provide uninterrupted transportation services to ensure your goods reach their destination on time.",
+      title: "Over 20 Years of Experience",
+      text: "Backed by decades of industry knowledge, we know how to move freight with care and efficiency.",
     },
     {
       image: T2,
@@ -17,8 +17,8 @@ const WhyUse: React.FC = () => {
     },
     {
       image: T3,
-      title: "Fully Certified",
-      text: "Certified with CBSA, FAST, and HAZMAT to ensure your goods are delivered without delays or hidden fees.",
+      title: "Cross-Border Service",
+      text: "Seamless long-haul shipping across Canada and the U.S., with all compliance handled.",
     },
     // {
     //   image: "https://via.placeholder.com/80",
@@ -38,8 +38,8 @@ const WhyUse: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-gray-200 py-12 px-6">
-      <h2 className="text-3xl font-bold text-center text-black mb-8">
+    <section className="w-full bg-gray-200 py-8 px-6">
+      <h2 className="[family-name:var(--font-Roboto)] text-3xl font-bold text-center text-black mb-8">
         Why Ship With Us
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-screen-lg mx-auto">

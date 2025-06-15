@@ -8,21 +8,21 @@ return (
         className="relative w-full h-[60vh] md:h-[75vh] bg-cover bg-center justify-start"
         style={{ backgroundImage: `url(${S1.src})` }}
       >
-        <div className="relative z-3 flex flex-col pt-18 md:pt-1 items-center justify-center h-full text-white bg-black/52">
-            <h1 className="text-4xl text-center font-bold md:text-5xl ml-0.5 mr-0.5 relative -translate-y-3">You Name it, We Ship it</h1>
-            <p className="text-2xl text-center mt-2 ml-0.5 mr-0.5 relative -translate-y-3">
-            Delivering excellence, one shipment at a time.
+          <div className="relative z-3 flex flex-col pt-18 md:pt-1 items-center justify-center h-full text-white bg-black/52">
+            <h1 className="font-[family-name:var(--font-poppins)] text-4xl text-center font-semibold md:text-5xl ml-0.5 mr-0.5 relative -translate-y-3">Endless Roads, Unshakable Service</h1>
+            <p className="text-xl md:text-2xl font-semibold text-center mt-2 ml-0.5 mr-0.5 relative -translate-y-2">
+            Big Enough to Handle It. Small Enough to Care
             </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-screen-md mt-2">
           <a
             href="/quote"
-            className="bg-green-700 text-white font-bold py-3 px-6 rounded text-center hover:bg-green-800 transition"
-          >
+            className="bg-green-700 md:text-xl text-white font-bold py-3 px-6 rounded text-center hover:bg-green-800 transition"
+          > 
             Get a Quote
           </a>
           <a
             href="/contacts"
-            className="bg-green-700 text-white font-bold py-3 px-6 rounded text-center hover:bg-green-800 transition"
+            className="bg-green-700 md:text-xl text-white font-bold py-3 px-6 rounded text-center hover:bg-green-800 transition"
           >
             Contact Us
           </a>

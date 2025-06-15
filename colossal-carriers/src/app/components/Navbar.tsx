@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import preview from "../../../public/preview.webp"; // Adjust the path as necessary
 
 export default function Navbar() {
   const [activeLink, setActiveLink] = useState("/"); // State to track the active link
@@ -15,19 +16,16 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200">
-      <div className="max-w-screen-xl grid grid-cols-1 md:grid-cols-3 items-center gap-4 mx-auto p-3 md:p-4">
+    <nav className="bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200 ">
+      <div className="max-w-screen-2xl grid grid-cols-1 md:grid-cols-3 items-center gap-4 mx-auto px-4 py-3 md:p-5 lg:p-3 2xl:p-2">
         {/* Logo + Hamburger */}
         <div className="flex justify-between items-center">
-          <a href="/" className="flex items-center space-x-3">
+        <a href="/" className="flex items-center space-x-3">
             <img
-              src="https://flowbite.com/docs/images/logo.svg"
-              className="h-8"
-              alt="Flowbite Logo"
+              src={preview.src} // Use the imported preview image
+              className="h-14 lg:h-16"
+              alt="Colossal Carriers Logo"
             />
-            <span className="self-center text-black text-2xl font-semibold whitespace-nowrap">
-              Colossal Carriers
-            </span>
           </a>
           {/* Hamburger menu (mobile only) */}
           <button
@@ -58,14 +56,14 @@ export default function Navbar() {
         <div
           className={`${
             isMenuOpen ? "block" : "hidden"
-          } md:flex flex-col md:flex-row justify-center md:space-x-8 mt-4 md:mt-0 font-medium md:border-0 border-gray-100 rounded-lg bg-white md:bg-white md:p-0 p-4`}
+          } md:flex flex-col md:flex-row justify-center md:space-x-8 font-medium md:border-0 border-gray-100 rounded-lg bg-white md:bg-white md:p-0 p-4`}
         >
           <ul className="flex flex-col md:flex-row md:space-x-8">
             <li>
               <Link
                 href="/services"
                 onClick={() => handleSetActive("/services")} // Set active link
-                className={`block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 ${
+                className={`font-[family-name:var(--font-poppins)] block py-2 px-3 text-xl xl:text-2xl text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 ${
                   activeLink === "/services" ? "underline underline-offset-16 text-green-600" : ""
                 }`}
               >
@@ -76,7 +74,7 @@ export default function Navbar() {
               <Link
                 href="/about"
                 onClick={() => handleSetActive("/about")} // Set active link
-                className={`block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 ${
+                className={`font-[family-name:var(--font-poppins)] block py-2 px-3 text-xl xl:text-2xl text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 ${
                   activeLink === "/about" ? "underline underline-offset-16 text-green-600" : ""
                 }`}
               >
@@ -87,7 +85,7 @@ export default function Navbar() {
               <Link
                 href="/careers"
                 onClick={() => handleSetActive("/careers")} // Set active link
-                className={`block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 ${
+                className={`font-[family-name:var(--font-poppins)] block py-2 px-3 text-xl xl:text-2xl text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 ${
                   activeLink === "/careers" ? "underline underline-offset-16 text-green-600" : ""
                 }`}
               >
@@ -98,7 +96,7 @@ export default function Navbar() {
               <Link
                 href="/contacts"
                 onClick={() => handleSetActive("/contacts")} // Set active link
-                className={`block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 ${
+                className={`font-[family-name:var(--font-poppins)] block py-2 px-3 text-xl xl:text-2xl text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 ${
                   activeLink === "/contacts" ? "underline underline-offset-16 text-green-600" : ""
                 }`}
               >
@@ -113,7 +111,7 @@ export default function Navbar() {
           {/* Mobile-only call button */}
           <a
             href="tel:+1234567890"
-            className="md:hidden block text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-4 py-2 text-center"
+            className="md:hidden block text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-4 py-3 text-center"
           >
             Call Us
           </a>
@@ -122,7 +120,7 @@ export default function Navbar() {
           <Link href="/quote">
             <button
               type="button"
-              className="text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-4 py-2 text-center"
+              className="text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm lg:text-lg px-4 py-3 text-center"
             >
               GET A QUOTE
             </button>

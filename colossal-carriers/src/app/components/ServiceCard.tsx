@@ -1,28 +1,74 @@
-import React from "react";
-import Link from "next/link";
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
 interface CardProps {
+  name: string;
+  description: string;
   image: string;
-  title: string;
-  text: string;
-  link: string; // Add a `link` prop for navigation
+  link: string;
+  width: number;
+  height: number;
 }
 
-const ServiceCard: React.FC<CardProps> = ({ image, title, text, link }) => {
+const ServiceCard: React.FC<CardProps> = ({
+  name,
+  description,
+  image,
+  link,
+  width,
+  height,
+}) => {
+  const [inView, setInView] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  // IntersectionObserver to detect when the card is in view
+  useEffect(() => {
+    const node = cardRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+        }
+      },
+      { threshold: 0.3 } // Trigger when 20% of the card is visible
+    );
+
+    observer.observe(node);
+
+    return () => {
+      observer.unobserve(node);
+    };
+  }, []);
+
   return (
-    <Link href={link}>
-      <div className="bg-white shadow-xl  transition-all duration-700 hover:scale-105 hover:shadow-2xs cursor-pointer md:max-w-[30vw] border-green-800 border-2">
-        {image && (
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-55 object-cover  mb-4"
-          />
-        )}
-        <h3 className="text-2xl font-bold text-black m-2">{title}</h3>
-        <p className="text-gray-700 text-md m-2">{text}</p>
+    <div
+      ref={cardRef}
+      className={`relative flex flex-col w-[90vw] md:w-[35vw] xl:w-[25vw] mb-12 overflow-hidden shadow-2xl cursor-pointer bg-white transition mx-auto mt-6 border-1 border-secondary flex-shrink-0 hover:scale-110 duration-700${
+        inView ? "animate-fade-in-scale" : "opacity-0"
+      }`}
+    >
+      {/* Card background image */}
+      <Image
+        width={width}
+        height={height}
+        src={image}
+        alt={name}
+        className="w-full h-[45%] object-cover border-b-3 border-green-700"
+      />
+
+      {/* Name and description */}
+      <div className="flex flex-col items-center w-full z-10 bg-background p-2 pb-6">
+        <h2 className="font-[family-name:var(--font-Roboto)] text-3xl font-bold text-primary text-center ">
+          {name}
+        </h2>
+        <p className="text-lg text-textColor text-center font-semibold px-8">
+          {description}
+        </p>
       </div>
-    </Link>
+    </div>
   );
 };
 

@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@ant-design/icons": "^6.0.0",
+    "@next/third-parties": "^15.2.4",
+    "@react-spring/web": "^10.0.1",
     "@svgr/webpack": "^8.1.0",
     "@types/react": "^19.1.2",
     "next": "15.3.0",
