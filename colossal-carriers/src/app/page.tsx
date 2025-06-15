@@ -74,10 +74,10 @@ export default function Home() {
       {/* Info Section */}
       <hr className="w-full h-[1.5px] bg-[#59890c]"/> 
       <WhyUse/>
-      <section className="flex items-center justify-center align-middle w-full h-[10vh] md:h-[15vh] bg-gray-200 ">
+      <section className="flex items-center justify-center w-full h-[10vh] md:h-[15vh] bg-gray-200 ">
         <a
           href="/about"
-          className="bg-green-700 text-white font-bold py-2 px-4 rounded text-center hover:bg-green-800 transition mb-15"
+          className="bg-green-700 text-white font-bold py-2 px-4 items-center rounded text-center hover:bg-green-800 transition"
         >
           More About Us
         </a>

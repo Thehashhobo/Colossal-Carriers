@@ -64,7 +64,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}>
         <Navbar />
-        <div className="pt-19 md:pt-22">
+        <div className="pt-33 md:pt-22 xl:pt-20">
         {children}
         <div className="flex flex-col md:flex-row justify-between items-start p-8 bg-[#088044] text-white">
           {/* Footer Links */}

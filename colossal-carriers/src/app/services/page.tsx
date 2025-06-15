@@ -3,7 +3,7 @@ import S1 from "../../../public/images/S1.webp";
 import S2 from "../../../public/images/S2.webp";
 export default function Services() {
 return (
-<main className="flex flex-col min-h-screen justify-start items-start pt-16">
+<main className="flex flex-col min-h-screen justify-start items-start">
       <section
         className="relative w-full h-[60vh] md:h-[75vh] bg-cover bg-center justify-start"
         style={{ backgroundImage: `url(${S1.src})` }}
@@ -37,25 +37,26 @@ return (
             {/* Text Content */}
             <div className="flex-1 md:pr-8 p-4 border-1 hover:scale-105 shadow-lg transition-transform duration-300 ease-in-out">
                 <h2 className="text-3xl font-bold text-black mb-4">
-                Road Transpotation 
+                Transpotation of Dry Goods
                 </h2>
-                <h3 className="text-xl font-semibold text-[#59890c] mb-4">
+                {/* <h3 className="text-xl font-semibold text-[#59890c] mb-4">
                 Larger Fleet. Broader Reach. More Possibilities.
-                </h3>
+                </h3> */}
                 <p className="text-gray-700 mb-4">
-                Established in 2005, ET Transport operates from 2 locations in
-                Canada – Ontario and New Brunswick. This ensures that your cargo
-                is transported promptly and efficiently.
+                Dry vans are the most widely used type of freight trailer, 
+                perfect for transporting general cargo that needs to be shielded from weather 
+                and road conditions. 
                 </p>
                 <p className="text-gray-700 mb-4">
-                With over 25,000 shipments transported each year, ET Transport has
-                processes to ensure that your products arrive at the destination
-                safely and on time.
+                Commonly shipped items include automotive components, furniture, building materials, 
+                paper products, plastics, packaging materials, and a variety of dry, canned, and 
+                non-perishable food items.
+
                 </p>
                 <p className="text-gray-700 mb-6">
-                ET Transport is an asset-based trucking company with over 100
-                trucks and more than 200 trailers – fully equipped to move your
-                product to its final destination safely and on time.
+                Designed for solid, non-refrigerated freight, dry vans offer a secure and efficient 
+                solution, with goods easily accommodated in our 53-foot trailers.
+
                 </p>
                 <div className="flex space-x-4">
                 <a className="bg-green-700 text-white font-bold py-2 px-4 rounded hover:bg-green-800" 
@@ -91,26 +92,24 @@ return (
             {/* Text Content */}
             <div className="flex-1 md:pr-8 p-4 border-1 hover:scale-105 shadow-lg transition-transform duration-300 ease-in-out">
                 <h2 className="text-3xl font-bold text-black mb-4">
-                Reefer / Heated Transport
+                Specialty Handling of Refrigerated / Frozen Products
                 </h2>
-                <h3 className="text-xl font-semibold text-[#59890c] mb-4">
+                {/* <h3 className="text-xl font-semibold text-[#59890c] mb-4">
                 Larger Fleet. Broader Reach. More Possibilities.
-                </h3>
+                </h3> */}
                 <p className="text-gray-700 mb-4">
-                Established in 2005, ET Transport operates from 2 locations in
-                Canada – Ontario and New Brunswick. This ensures that your cargo
-                is transported promptly and efficiently.
+Transporting frozen goods—like meat, seafood, ice cream, and frozen baked products—demands more than just refrigeration. It takes experience. At Colossal Carriers, we've spent years perfecting the art of frozen freight logistics. Our drivers and dispatch team understand the sensitivity of temperature-controlled loads and the importance of timely delivery to preserve product quality.
+
+
                 </p>
                 <p className="text-gray-700 mb-4">
-                With over 25,000 shipments transported each year, ET Transport has
-                processes to ensure that your products arrive at the destination
-                safely and on time.
+Our state-of-the-art refrigerated trailers are equipped with advanced monitoring systems to maintain stable sub-zero temperatures from pickup to final drop-off. This precision ensures product integrity at every stage of the journey, giving our clients peace of mind that their cargo remains frozen, fresh, and secure—no matter the distance.
                 </p>
-                <p className="text-gray-700 mb-6">
+                {/* <p className="text-gray-700 mb-6">
                 ET Transport is an asset-based trucking company with over 100
                 trucks and more than 200 trailers – fully equipped to move your
                 product to its final destination safely and on time.
-                </p>
+                </p> */}
                 <div className="flex space-x-4">
                 <a className="bg-green-700 text-white font-bold py-2 px-4 rounded hover:bg-green-800" 
                 href = "/quote">
