@@ -35,7 +35,7 @@ return (
       <section className="w-full bg-white py-12 px-6">
             <div className="flex flex-col md:flex-row items-center max-w-screen-lg mx-auto gap-2">
             {/* Text Content */}
-            <div className="flex-1 md:pr-8 p-4 border-1 hover:scale-105 shadow-lg transition-transform duration-300 ease-in-out">
+            <div className="flex-1 md:pr-8 p-4 border-1 hover:scale-105 shadow-lg transition-transform duration-300 ease-in-out scroll-mt-38 md:scroll-mt-26 xl:scroll-mt-24" id="dry">
                 <h2 className="text-3xl font-bold text-black mb-4">
                 Transpotation of Dry Goods
                 </h2>
@@ -90,7 +90,7 @@ return (
             </div>
 
             {/* Text Content */}
-            <div className="flex-1 md:pr-8 p-4 border-1 hover:scale-105 shadow-lg transition-transform duration-300 ease-in-out">
+            <div className="flex-1 md:pr-8 p-4 border-1 hover:scale-105 shadow-lg transition-transform duration-300 ease-in-out scroll-mt-38 md:scroll-mt-26 xl:scroll-mt-24" id="reefer">
                 <h2 className="text-3xl font-bold text-black mb-4">
                 Specialty Handling of Refrigerated / Frozen Products
                 </h2>

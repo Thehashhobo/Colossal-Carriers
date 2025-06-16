@@ -66,10 +66,10 @@ export default function RootLayout({
         <Navbar />
         <div className="pt-33 md:pt-22 xl:pt-20">
         {children}
-        <div className="flex flex-col md:flex-row justify-between items-start p-8 bg-[#088044] text-white">
+        <footer className="flex flex-col md:flex-row justify-between items-start p-8 bg-[#088044] text-white">
           {/* Footer Links */}
           <div className="mb-6 md:mb-0">
-            <h3 className="text-lg md:text-xl font-bold uppercase mb-4">Company</h3>
+            <h3 className="text-xl md:text-2xl font-bold uppercase mb-4">Company</h3>
             <ul className="list-disc space-y-2 ml-4.5">
               <li>
                 <Link href="/" className="text-white hover:underline">
@@ -95,7 +95,7 @@ export default function RootLayout({
           </div>
 
           <div className="mb-6 md:mb-0">
-            <h3 className="text-lg md:text-xl font-bold uppercase mb-4">Services</h3>
+            <h3 className="text-xl md:text-2xl font-bold uppercase mb-4">Services</h3>
             <ul className="list-disc space-y-2 ml-4.5">
               <li>
                 <Link href="/services" className="text-white hover:underline">
@@ -103,12 +103,12 @@ export default function RootLayout({
                 </Link>
               </li>
               <li>
-                <Link href="/services/reefers" className="text-white hover:underline">
+                <Link href="/services/#reefer" className="text-white hover:underline">
                   Reefers
                 </Link>
               </li>
               <li>
-                <Link href="/services/dry" className="text-white hover:underline">
+                <Link href="/services/#dry" className="text-white hover:underline">
                   Dry Vans
                 </Link>
               </li>
@@ -117,7 +117,7 @@ export default function RootLayout({
 
           {/* Footer Social */}
           <div className="mb-6 md:mb-0">
-            <h3 className="text-lg md:text-xl font-bold uppercase mb-4">Contacts</h3>
+            <h3 className="text-xl md:text-2xl font-bold uppercase mb-4">Contacts</h3>
             <div className="flex flex-col gap-3 space-x-4">
             <a
             href="/contacts"
@@ -146,7 +146,7 @@ export default function RootLayout({
 
           {/* Footer Info */}
           <div>
-            <h3 className="text-lg md:text-xl font-bold uppercase mb-4">General Inquiries</h3>
+            <h3 className="text-xl md:text-2xl font-bold uppercase mb-4">General Inquiries</h3>
             <p className="mb-2">
               <strong>Location:</strong> Vaughan, Ontario, Canada
             </p>
@@ -163,7 +163,7 @@ export default function RootLayout({
               </a>
             </p>
           </div>
-        </div>
+        </footer>
         <Footer />
         </div>
       </body>

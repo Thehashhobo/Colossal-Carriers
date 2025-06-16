@@ -88,7 +88,7 @@ export default function Contacts() {
               <span className="text-green-700 text-2xl">
                 <img src={C1.src} className="w-6 h-6 mt-0.5" alt="Phone" />
               </span>
-              <p className="text-lg font-medium">647-282-3167</p>
+              <p className="text-lg font-medium">1-647-282-3167</p>
             </div>
             <p className="text-gray-600">
               32 Discovery Trail, Maple ON, L6A 2X8 Canada
