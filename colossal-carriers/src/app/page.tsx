@@ -60,7 +60,7 @@ export default function Home() {
             with an excellent track record of safe, cost effective and on-time delivery."
             width={3000}
             height={2000}
-            link="/services/reefers"
+            link="/services"
           />
           <ServiceCard
             image={H3.src}
@@ -69,7 +69,7 @@ export default function Home() {
             the freedom of lease-to-own, we have a place for you."
             width={5456}
             height={3632}
-            link="/services/dry-vans"
+            link="/careers"
           />
         </div>
       </section>

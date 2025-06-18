@@ -21,7 +21,7 @@ export default function Navbar() {
       <div className="max-w-screen-2xl grid grid-cols-1 md:grid-cols-3 items-center gap-4 mx-auto px-4 py-3 md:p-5 lg:p-2 2xl:p-1">
         {/* Logo + Hamburger */}
         <div className="flex justify-between items-center">
-        <a href="/" className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center space-x-3">
             <Image
               priority
               width={1880}
@@ -30,7 +30,7 @@ export default function Navbar() {
               className="w-[40%] h-auto"
               alt="Colossal Carriers Logo"
             />
-          </a>
+          </Link>
           {/* Hamburger menu (mobile only) */}
           <button
             onClick={handleToggleMenu}
@@ -113,12 +113,12 @@ export default function Navbar() {
         {/* Buttons (Call Us + Get a Quote) */}
         <div className="flex flex-row justify-between md:justify-end items-center">
           {/* Mobile-only call button */}
-          <a
-            href="tel:+1234567890"
+          <Link
+            href="tel:+16472823167"
             className="md:hidden block text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-4 py-3 text-center"
           >
             Call Us
-          </a>
+          </Link>
 
           {/* Visible on all sizes */}
           <Link href="/quote">

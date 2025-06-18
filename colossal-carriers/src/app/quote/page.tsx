@@ -139,7 +139,7 @@ export default function QuoteFormPage() {
           alert(data.error || "Submission failed. Please try again.");
         }
       } catch (err) {
-        alert("Submission failed. Please try again.");
+        alert("Submission failed. Please try again. error: " + err);
       }
     }
     

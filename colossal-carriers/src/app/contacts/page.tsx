@@ -89,7 +89,7 @@ export default function Contacts() {
         alert("Submission failed. Please try again.");
       }
     } catch (err) {
-      alert("Submission failed. Please try again.");
+      alert("Submission failed. Please try again. error: " + err);
     }
   }
 }

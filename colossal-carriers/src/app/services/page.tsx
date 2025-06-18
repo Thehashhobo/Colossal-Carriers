@@ -104,7 +104,7 @@ return (
                 Larger Fleet. Broader Reach. More Possibilities.
                 </h3> */}
                 <p className="text-gray-700 mb-4">
-Transporting frozen goods—like meat, seafood, ice cream, and frozen baked products—demands more than just refrigeration. It takes experience. At Colossal Carriers, we've spent years perfecting the art of frozen freight logistics. Our drivers and dispatch team understand the sensitivity of temperature-controlled loads and the importance of timely delivery to preserve product quality.
+Transporting frozen goods—like meat, seafood, ice cream, and frozen baked products—demands more than just refrigeration. It takes experience. At Colossal Carriers, we&apos;ve spent years perfecting the art of frozen freight logistics. Our drivers and dispatch team understand the sensitivity of temperature-controlled loads and the importance of timely delivery to preserve product quality.
 
 
                 </p>
