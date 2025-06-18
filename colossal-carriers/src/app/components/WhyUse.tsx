@@ -2,6 +2,7 @@ import React from "react";
 import T1 from "../../../public/T1.svg"
 import T2 from "../../../public/T2.svg"
 import T3 from "../../../public/T3.svg"
+import Image from "next/image";
 
 const WhyUse: React.FC = () => {
   const items = [
@@ -45,7 +46,9 @@ const WhyUse: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-screen-lg mx-auto">
         {items.map((item, index) => (
           <div key={index} className="flex flex-col items-center text-center">
-            <img
+            <Image
+              width={120}
+              height={120}
               src={item.image.src}
               alt={item.title}
               className="w-20 h-20 mb-4"

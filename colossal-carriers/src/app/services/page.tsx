@@ -1,6 +1,8 @@
 
+import Image from "next/image";
 import S1 from "../../../public/images/S1.webp";
 import S2 from "../../../public/images/S2.webp";
+
 export default function Services() {
 return (
 <main className="flex flex-col min-h-screen justify-start items-start">
@@ -68,7 +70,9 @@ return (
 
             {/* Image Content */}
             <div className="flex-1 mt-8 md:mt-0 z-3 md:translate-x-3">
-                <img
+                <Image
+                width={1536}
+                height={1024}
                 src={S1.src}
                 alt="Trucks"
                 className="w-full h-auto hover:scale-105 shadow-lg transition-transform duration-300 ease-in-out"
@@ -82,7 +86,9 @@ return (
             <div className="flex flex-col md:flex-row items-center max-w-screen-lg mx-auto gap-2">
             {/* Image Content */}
             <div className="flex-1 mt-8 md:mt-0 z-3 md:-translate-x-3">
-                <img
+                <Image
+                width={1024}
+                height={1024}
                 src={S2.src}
                 alt="Trucks"
                 className="w-full h-auto hover:scale-105 shadow-lg transition-transform duration-300 ease-in-out"

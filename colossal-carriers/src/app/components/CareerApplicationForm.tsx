@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function CareerApplicationForm() {
   const [form, setForm] = useState({
@@ -76,7 +76,7 @@ export default function CareerApplicationForm() {
     }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const newErrors: { [key: string]: string } = {};
     if (!form.name) newErrors.name = "Name is required.";
@@ -90,9 +90,54 @@ export default function CareerApplicationForm() {
 
     setErrors(newErrors);
     if (Object.keys(newErrors).length === 0) {
-      setShowPopup(true);
+      // Submit to API
+      try {
+        const url = process.env.NEXT_PUBLIC_GOOGLE_SHEET_URL;
+        
+        if (!url) {
+          alert("Submission failed. Server URL is not configured.");
+          return;
+        }
+        const res = await fetch(url, {
+              method: "POST",
+              headers: {
+                "Content-Type": "text/plain"  
+              },
+              body: JSON.stringify({
+                endpoint: "careers",
+                name: form.name,
+                email: form.email,
+                phone: form.phone,
+                experience: form.experience,
+                position: form.position,
+                equipment: form.equipment,
+                contact: form.contact,
+                crossBorder: form.crossBorder,
+                comments: form.comments
+              })
+            });
+        if (res.ok) {
+          setShowPopup(true);
+          setForm({
+            name: "",
+            email: "",
+            phone: "",
+            experience: "",
+            position: "",
+            equipment: "",
+            contact: "",
+            crossBorder: "",
+            comments: "",
+          });
+        } else {
+          const data = await res.json();
+          alert(data.error || "Submission failed. Please try again.");
+        }
+      } catch (err) {
+        alert("Submission failed. Please try again.");
+      }
     }
-  }
+    }
 
     function closePopup() {
     setShowPopup(false);

@@ -47,11 +47,12 @@ const ServiceCard: React.FC<CardProps> = ({
     <div
       ref={cardRef}
       className={`relative flex flex-col w-[90vw] md:w-[35vw] xl:w-[25vw] mb-12 overflow-hidden shadow-2xl cursor-pointer bg-white transition mx-auto mt-6 border-1 border-secondary flex-shrink-0 hover:scale-110 duration-700${
-        inView ? "animate-fade-in-scale" : "opacity-0"
+        inView ? " animate-fade-in-scale" : " opacity-0"
       }`}
     >
       {/* Card background image */}
       <Image
+        priority
         width={width}
         height={height}
         src={image}

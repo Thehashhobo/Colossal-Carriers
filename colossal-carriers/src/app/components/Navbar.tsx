@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import preview from "../../../public/preview.webp"; // Adjust the path as necessary
+import Image from "next/image"; // Import Image for optimized image handling
 
 export default function Navbar() {
   const [activeLink, setActiveLink] = useState("/"); // State to track the active link
@@ -17,13 +18,16 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200 ">
-      <div className="max-w-screen-2xl grid grid-cols-1 md:grid-cols-3 items-center gap-4 mx-auto px-4 py-3 md:p-5 lg:p-3 2xl:p-2">
+      <div className="max-w-screen-2xl grid grid-cols-1 md:grid-cols-3 items-center gap-4 mx-auto px-4 py-3 md:p-5 lg:p-2 2xl:p-1">
         {/* Logo + Hamburger */}
         <div className="flex justify-between items-center">
         <a href="/" className="flex items-center space-x-3">
-            <img
-              src={preview.src} // Use the imported preview image
-              className="h-14 lg:h-16"
+            <Image
+              priority
+              width={1880}
+              height={704}
+              src={preview.src}
+              className="w-[40%] h-auto"
               alt="Colossal Carriers Logo"
             />
           </a>

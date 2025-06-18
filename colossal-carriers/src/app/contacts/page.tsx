@@ -1,12 +1,13 @@
 "use client";
 import React, { useRef, useState } from "react";
 import C1 from "../../../public/C1.svg";
+import Image from "next/image";
 
 export default function Contacts() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", comments: "" });
   const [errors, setErrors] = useState<{ name?: string; email?: string; phone?: string }>({});
   const debounceRef = useRef<NodeJS.Timeout | null>(null);
-    const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   function validateEmail(email: string) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -43,7 +44,7 @@ export default function Contacts() {
     }, 400);
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const newErrors: { name?: string; email?: string; phone?: string } = {};
     if (!form.name) newErrors.name = "Name is required.";
@@ -51,15 +52,51 @@ export default function Contacts() {
     else if (!validateEmail(form.email)) newErrors.email = "Invalid email address.";
     if (form.phone && !validatePhone(form.phone)) newErrors.phone = "Invalid phone number.";
     setErrors(newErrors);
-    setErrors(newErrors);
     if (Object.keys(newErrors).length === 0) {
-      setShowPopup(true);
+
+    const formData = new FormData();
+    formData.append("endpoint", "contacts");
+    formData.append("name", form.name);
+    formData.append("email", form.email);
+    formData.append("phone", form.phone);
+    formData.append("comments", form.comments);
+
+    try {
+      const url = process.env.NEXT_PUBLIC_GOOGLE_SHEET_URL;
+      if (!url) {
+        alert("Submission failed. Server URL is not configured.");
+        return;
+      }
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain"
+        },
+        body: JSON.stringify({
+          endpoint: "contacts",
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          comments: form.comments
+        })
+      });
+
+      if (res.ok) {
+        console.log("Form submitted successfully");
+        setShowPopup(true);
+        setForm({ name: "", email: "", phone: "", comments: "" });
+      } else {
+        alert("Submission failed. Please try again.");
+      }
+    } catch (err) {
+      alert("Submission failed. Please try again.");
     }
   }
+}
+
 
   function closePopup() {
     setShowPopup(false);
-    // reset form here
     setForm({
       name: "",
       email: "",
@@ -86,7 +123,7 @@ export default function Contacts() {
           <div className="space-y-4">
             <div className="flex items-center space-x-4">
               <span className="text-green-700 text-2xl">
-                <img src={C1.src} className="w-6 h-6 mt-0.5" alt="Phone" />
+                <Image width={120} height={120} src={C1.src} className="w-6 h-6 mt-0.5" alt="Phone" />
               </span>
               <p className="text-lg font-medium">1-647-282-3167</p>
             </div>

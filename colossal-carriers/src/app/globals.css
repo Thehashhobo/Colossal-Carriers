@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  --animate-fade-in-scale: fade-in-scale 1.3s ease-out;
+  --animate-fade-in-scale: fade-in-scale 1.1s ease-out;
     @keyframes fade-in-scale {
       0% {
         opacity: 0;

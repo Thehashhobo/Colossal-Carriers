@@ -2,6 +2,7 @@ import A1 from "../../../public/images/A1.webp";
 import A2 from "../../../public/images/A2.webp";
 import WhyUse from "../components/WhyUse";
 import Reviews from "../components/Reviews";
+import Image from "next/image";
 
 export default function About() {
 
@@ -58,7 +59,9 @@ export default function About() {
 
             {/* Image Content */}
             <div className="flex-1 mt-8 md:mt-0 z-3 md:translate-x-3">
-                <img
+                <Image
+                width={1024}
+                height={1024}
                 src={A2.src}
                 alt="Trucks"
                 className="w-full h-auto hover:scale-105 shadow-lg transition-transform duration-300 ease-in-out"

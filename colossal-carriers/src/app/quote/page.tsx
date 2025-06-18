@@ -1,12 +1,12 @@
 "use client";
-
 import { useState } from "react";
 
 export default function QuoteFormPage() {
   const [currentStep, setCurrentStep] = useState(1);
+  const [showPopup, setShowPopup] = useState(false);
   const [formData, setFormData] = useState({
     companyName: "",
-    Name: "",
+    name: "",
     email: "",
     contactPhone: "",
     shipmentSize: [] as string[],
@@ -30,7 +30,7 @@ export default function QuoteFormPage() {
 
     if (step === 1) {
       if (!formData.companyName) newErrors.companyName = "Company Name is required.";
-      if (!formData.Name) newErrors.Name = "Name is required.";
+      if (!formData.name) newErrors.Name = "Name is required.";
       if (!formData.email) newErrors.email = "Email is required.";
       else if (!validateEmail(formData.email)) newErrors.email = "Invalid email address.";
       if (!formData.contactPhone) newErrors.contactPhone = "Contact Phone is required.";
@@ -85,11 +85,64 @@ export default function QuoteFormPage() {
     if (currentStep > 1) setCurrentStep(currentStep - 1);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (validateStep(currentStep)) {
-      setCurrentStep(4);
-      // Here you can also send formData to your backend
+      try {
+      const url = process.env.NEXT_PUBLIC_GOOGLE_SHEET_URL;
+      
+      if (!url) {
+        alert("Submission failed. Server URL is not configured.");
+        return;
+      }
+      const res = await fetch(url, {
+              method: "POST",
+              headers: {
+                "Content-Type": "text/plain" 
+              },
+              body: JSON.stringify({
+                endpoint: "quotes",
+                companyName: formData.companyName,
+                name: formData.name,
+                email: formData.email,
+                contactPhone: formData.contactPhone,
+                shipmentSize: formData.shipmentSize,
+                equipment: formData.equipment,
+                numberOfPallets: formData.numberOfPallets,
+                productType: formData.productType,
+                shippingFrom: formData.shippingFrom,
+                shippingTo: formData.shippingTo,
+                pickupDate: formData.pickupDate,
+                deliveryDate: formData.deliveryDate,
+                notes: formData.notes
+              })
+            });
+        if (res.ok) {
+          setShowPopup(true);
+          setCurrentStep(1);
+          setFormData({ 
+            companyName: "",
+            name: "",
+            email: "",
+            contactPhone: "",
+            shipmentSize: [] as string[],
+            equipment: [] as string[],
+            numberOfPallets: "",
+            productType: "",
+            shippingFrom: "",
+            shippingTo: "",
+            pickupDate: "",
+            deliveryDate: "",
+            notes: "",
+          });
+        } else {
+          const data = await res.json();
+          alert(data.error || "Submission failed. Please try again.");
+        }
+      } catch (err) {
+        alert("Submission failed. Please try again.");
+      }
     }
+    
   };
 
   return (
@@ -141,8 +194,8 @@ export default function QuoteFormPage() {
                     </label>
                     <input
                       type="text"
-                      id="Name"
-                      value={formData.Name}
+                      id="name"
+                      value={formData.name}
                       onChange={handleChange}
                       className={`mt-1 block w-full border-2 shadow-sm py-2 px-3 ${
                         errors.Name ? "border-red-500" : "border-gray-300"
@@ -387,16 +440,6 @@ export default function QuoteFormPage() {
                 </form>
               </div>
             )}
-
-            {currentStep === 4 && (
-              <div>
-                <h2 className="text-xl font-bold mb-4">Confirmation</h2>
-                <p className="text-gray-700">
-                  Thank you for submitting your quote request! We will review your details
-                  and get back to you shortly.
-                </p>
-              </div>
-            )}
           </div>
 
           {/* Navigation Buttons */}
@@ -421,17 +464,32 @@ export default function QuoteFormPage() {
               >
                 Submit
               </button>
-            ) : currentStep === 4 ? null : (
+            ) : (
               <button
                 type="button"
                 onClick={nextStep}
-                className="bg-blue-600 text-white font-medium py-2 px-4 rounded-md hover:bg-blue-700"
+                className="bg-green-600 text-white font-medium py-2 px-4 rounded-md hover:bg-green-700"
               >
                 Next
               </button>
             )}
           </div>
+
         </div>
+        {showPopup && (
+        <div className="fixed inset-0 flex items-center  justify-center backdrop-blur-xl bg-gray-300/50 z-50">
+          <div className="bg-white rounded-lg shadow-lg border-2 border-green-700 p-8 max-w-sm w-full text-center">
+            <h3 className="text-xl font-bold mb-4 text-green-700">Thank you!</h3>
+            <p className="mb-6">Your application has been submitted successfully.</p>
+            <button
+              onClick={() => setShowPopup(false)}
+              className="bg-green-700 text-white px-6 py-2 rounded-lg hover:bg-green-800"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
       </div>
     </div>
   );

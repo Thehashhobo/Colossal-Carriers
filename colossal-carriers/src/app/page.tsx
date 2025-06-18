@@ -4,6 +4,7 @@ import H3 from "../../public/images/H3.webp";
 import ServiceCard from "./components/ServiceCard";
 import WhyUse from "./components/WhyUse";
 import Reviews from "./components/Reviews";
+import Certifications from "./components/Certifications";
 
 
 export default function Home() {
@@ -36,15 +37,16 @@ export default function Home() {
 
       </section>
       {/* Certifications Section */}
-      <section className="flex items-center justify-center w-full h-[10vh] bg-white border-t-2 border-b-2 border-[#59890c]">
+      {/* <section className="flex items-center justify-center w-full h-[10vh] bg-white border-t-2 border-b-2 border-[#59890c]">
         <h2 className="text-3xl font-bold text-white">Certifications</h2>
-      </section>
+      </section> */}
+      <Certifications/>
 
       {/* Transportation Services Section */}
-      <section className="w-full bg-gray-200 px-6">
+      <section className="w-full bg-white px-6">
         <div className="text-center">
-            <p className="font-[family-name:var(--font-poppins)] mb-1.5 text-3xl text-green-800 font-extrabold opacity-45 py-6">Colossal Carriers</p>
-            <p className="mb-4.5 mx-5 text-xl md:mx-25 md:text-3xl font-bold ">Canadian-based company with a fleet of trucks available to transport your goods within Canada and the USA
+            <p className="font-[family-name:var(--font-poppins)] text-3xl text-green-800 font-extrabold opacity-45 py-8">Colossal Carriers</p>
+            <p className="mb-4.5 font-[family-name:var(--font-poppins)] mx-5 text-xl md:mx-25 md:text-3xl font-bold ">Canadian-based company with a fleet of trucks available to transport your goods within Canada and the USA
             </p>
         </div>
         {/* <h2 className="text-3xl font-bold text-center text-black mb-8">

@@ -1,5 +1,6 @@
 import A2 from "../../../public/images/A2.webp";
 import CareerApplicationForm from "../components/CareerApplicationForm";
+import Image from "next/image";
 export default function Careers() {
   return (
     <main className="w-full bg-white py-14 md:py-10 px-6">
@@ -28,7 +29,9 @@ export default function Careers() {
 
     {/* Image Content */}
       <div className="flex-1 mt-8 md:mt-0 z-3 md:translate-x-3">
-          <img
+          <Image
+          width={1024}
+          height={1024}
           src={A2.src}
           alt="Trucks"
           className="w-full h-auto hover:scale-105 shadow-lg transition-transform duration-300 ease-in-out"
