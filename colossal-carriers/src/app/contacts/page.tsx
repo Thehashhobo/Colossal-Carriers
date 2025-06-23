@@ -107,7 +107,7 @@ export default function Contacts() {
 
 
   return (
-    <main className="flex flex-col min-h-screen justify-start items-center mt-2">
+    <main className="flex flex-col min-h-screen justify-start items-center">
       <section
         className="flex items-center justify-center w-full h-[12vh] px-10"
         style={{

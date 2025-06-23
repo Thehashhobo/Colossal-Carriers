@@ -107,7 +107,7 @@ export default function Footer() {
   
          
               <p className="text-sm mt-2 md:mt-0 text-black">
-                Designed and built by <a href="https://thehashhobo.github.io/Personal-Website/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">Jerry W</a>.
+                Designed and built by <a href="https://www.jerrywjn.com/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">Jerry W</a>.
               </p>
         </div>
 

@@ -22,33 +22,73 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Colossal Carriers – Canadian Cross-Border Logistics",
+  metadataBase: new URL("https://www.colossalcarriers.com"),
+
+  title: {
+    default: "Colossal Carriers – Canadian Cross-Border Logistics",
+    template: "%s | Colossal Carriers",
+  },
+
   description:
     "Efficient and reliable cross-border transportation solutions. Specializing in refrigerated and dry goods delivery across Canada and the U.S.",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+
   openGraph: {
     title: "Colossal Carriers – Canadian Cross-Border Logistics",
     description:
       "Efficient and reliable cross-border transportation solutions. Specializing in refrigerated and dry goods delivery across Canada and the U.S.",
-    url: "https://colossalcarriers.com/",
+    url: "https://www.colossalcarriers.com/",
     siteName: "Colossal Carriers",
+    type: "website",
     images: [
       {
-        url: "https://colossalcarriers.com/preview.jpg", // Replace with your actual preview image URL
-        width: 1200,
-        height: 630,
-        alt: "Colossal Carriers Truck on the Highway",
+        url: "https://www.colossalcarriers.com/preview.webp",
+        width: 1880,
+        height: 704,
+        alt: "Logo",
       },
     ],
-    type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Colossal Carriers – Cross-Border Logistics",
     description:
       "Dependable freight logistics for North American businesses. Let Colossal Carriers handle your shipping needs with precision and speed.",
-    images: ["https://colossalcarriers.com/preview.jpg"], // Same image as Open Graph
+    // site: "@ColossalCarriers", // if available
+    // creator: "@ColossalCarriers", // if available
+    images: ["https://www.colossalcarriers.com/preview.webp"],
   },
+
+  appleWebApp: {
+    capable: true,
+    title: "Colossal Carriers",
+    statusBarStyle: "black-translucent",
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-32x32.png",
+    apple: "/apple-touch-icon.png",
+  },
+
+  themeColor: "#088044",
+
+  alternates: {
+    canonical: "https://www.colossalcarriers.com/",
+  },
+
+  category: "transportation",
 };
+
 
 
 export default function RootLayout({

@@ -3,6 +3,34 @@ import A2 from "../../../public/images/A2.webp";
 import WhyUse from "../components/WhyUse";
 import Reviews from "../components/Reviews";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Colossal Carriers",
+  description: "Get to know Colossal Carriers — a family-run Canadian logistics company specializing in cross-border refrigerated and dry freight solutions.",
+  openGraph: {
+    title: "About Colossal Carriers",
+    description: "Built on over 20 years of experience, Colossal Carriers delivers excellence in cross-border trucking across North America.",
+    url: "https://www.colossalcarriers.com/about",
+    siteName: "Colossal Carriers",
+    images: [
+      {
+        url: "https://www.colossalcarriers.com/preview.webp",
+        width: 1880,
+        height: 704,
+        alt: "Logo",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Colossal Carriers",
+    description: "Learn about our mission, values, and the team driving freight success across Canada and the U.S.",
+    images: ["https://www.colossalcarriers.com/preview.webp"],
+  },
+};
+
 
 export default function About() {
 

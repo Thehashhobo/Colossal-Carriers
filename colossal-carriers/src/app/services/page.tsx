@@ -2,6 +2,27 @@
 import Image from "next/image";
 import S1 from "../../../public/images/S1.webp";
 import S2 from "../../../public/images/S2.webp";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Freight Services | Colossal Carriers",
+  description: "Explore reliable dry van, reefer, and cross-border freight solutions tailored for Canadian and U.S. businesses.",
+  openGraph: {
+    title: "Freight Services – Colossal Carriers",
+    description: "Efficient logistics and freight transportation across Canada and the U.S.",
+    url: "https://www.colossalcarriers.com/services",
+    images: [
+      {
+        url: "https://www.colossalcarriers.com/preview.webp",
+        width: 1880,
+        height: 704,
+        alt: "Logo",
+      },
+    ],
+    type: "website",
+  },
+};
+
 
 export default function Services() {
 return (
