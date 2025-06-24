@@ -3,25 +3,26 @@ import React, { useState } from "react";
 import Link from "next/link";
 import preview from "../../../public/preview.webp"; // Adjust the path as necessary
 import Image from "next/image"; // Import Image for optimized image handling
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
-  const [activeLink, setActiveLink] = useState("/"); // State to track the active link
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname(); // Get the current pathname
   function handleToggleMenu() {
     setIsMenuOpen(!isMenuOpen);
   }
 
-  function handleSetActive(link: string) {
-    setActiveLink(link); // Update the active link state
-  }
+  // function handleSetActive(link: string) {
+  //   setActiveLink(link); // Update the active link state
+  // }
 
   return (
     <nav className="bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200 ">
       <div className="max-w-screen-2xl grid grid-cols-1 md:grid-cols-3 items-center gap-4 mx-auto px-4 py-3 md:p-5 lg:p-2 2xl:p-1">
         {/* Logo + Hamburger */}
         <div className="flex justify-between items-center">
-          <Link href="/" className="flex items-center space-x-3">
+          <Link href="/" className={`flex items-center space-x-3 ${pathname === "/" ? "underline underline-offset-16 text-green-600" : ""}`} >
             <Image
               priority
               width={1880}
@@ -65,11 +66,10 @@ export default function Navbar() {
           <ul className="flex flex-col md:flex-row md:space-x-8">
             <li>
               <Link
-                href="/services"
-                onClick={() => handleSetActive("/services")} // Set active link
+                href="/services"// Set active link
                 className={`font-[family-name:var(--font-poppins)] block py-2 px-3 text-xl xl:text-2xl text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 ${
-                  activeLink === "/services" ? "underline underline-offset-16 text-green-600" : ""
-                }`}
+                    pathname === "/services" ? "underline underline-offset-16 text-green-600" : ""
+                  }`}
               >
                 Service
               </Link>
@@ -77,10 +77,9 @@ export default function Navbar() {
             <li>
               <Link
                 href="/about"
-                onClick={() => handleSetActive("/about")} // Set active link
                 className={`font-[family-name:var(--font-poppins)] block py-2 px-3 text-xl xl:text-2xl text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 ${
-                  activeLink === "/about" ? "underline underline-offset-16 text-green-600" : ""
-                }`}
+                    pathname === "/about" ? "underline underline-offset-16 text-green-600" : ""
+                  }`}
               >
                 About
               </Link>
@@ -88,10 +87,9 @@ export default function Navbar() {
             <li>
               <Link
                 href="/careers"
-                onClick={() => handleSetActive("/careers")} // Set active link
                 className={`font-[family-name:var(--font-poppins)] block py-2 px-3 text-xl xl:text-2xl text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 ${
-                  activeLink === "/careers" ? "underline underline-offset-16 text-green-600" : ""
-                }`}
+                    pathname === "/careers" ? "underline underline-offset-16 text-green-600" : ""
+                  }`}
               >
                 Careers
               </Link>
@@ -99,10 +97,9 @@ export default function Navbar() {
             <li>
               <Link
                 href="/contacts"
-                onClick={() => handleSetActive("/contacts")} // Set active link
-                className={`font-[family-name:var(--font-poppins)] block py-2 px-3 text-xl xl:text-2xl text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 ${
-                  activeLink === "/contacts" ? "underline underline-offset-16 text-green-600" : ""
-                }`}
+                  className={`font-[family-name:var(--font-poppins)] block py-2 px-3 text-xl xl:text-2xl text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 md:p-0 ${
+                    pathname === "/contacts" ? "underline underline-offset-16 text-green-600" : ""
+                  }`}
               >
                 Contact
               </Link>

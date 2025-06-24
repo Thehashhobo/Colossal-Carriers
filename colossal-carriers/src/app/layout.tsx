@@ -51,9 +51,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://www.colossalcarriers.com/preview.webp",
-        width: 1880,
-        height: 704,
-        alt: "Logo",
+        width: 1200, // Standard OpenGraph size
+        height: 630,
+        alt: "Colossal Carriers Truck Preview",
       },
     ],
   },
@@ -63,8 +63,6 @@ export const metadata: Metadata = {
     title: "Colossal Carriers – Cross-Border Logistics",
     description:
       "Dependable freight logistics for North American businesses. Let Colossal Carriers handle your shipping needs with precision and speed.",
-    // site: "@ColossalCarriers", // if available
-    // creator: "@ColossalCarriers", // if available
     images: ["https://www.colossalcarriers.com/preview.webp"],
   },
 
@@ -83,7 +81,7 @@ export const metadata: Metadata = {
   themeColor: "#088044",
 
   alternates: {
-    canonical: "https://www.colossalcarriers.com/",
+    canonical: "/",
   },
 
   category: "transportation",
