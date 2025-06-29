@@ -71,13 +71,6 @@ export const metadata: Metadata = {
     title: "Colossal Carriers",
     statusBarStyle: "black-translucent",
   },
-
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-32x32.png",
-    apple: "/apple-touch-icon.png",
-  },
-
   themeColor: "#088044",
 
   alternates: {
