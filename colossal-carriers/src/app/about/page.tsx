@@ -109,7 +109,7 @@ export default function About() {
           <hr className="w-full h-[1.5px] bg-[#59890c]"/> 
           <WhyUse/>
           <hr className="w-full h-[1.5px] bg-[#59890c]"/> 
-          <Reviews/>
+          {/* <Reviews/> */}
           </section>
     
         </main>
