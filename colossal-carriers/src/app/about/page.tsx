@@ -1,7 +1,6 @@
 import A1 from "../../../public/images/A1.webp";
 import A2 from "../../../public/images/A2.webp";
 import WhyUse from "../components/WhyUse";
-import Reviews from "../components/Reviews";
 import Image from "next/image";
 import { Metadata } from "next";
 
